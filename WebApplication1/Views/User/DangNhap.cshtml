@@ -1,0 +1,112 @@
+﻿@using BotDetect.Web.Mvc;
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section slide
+{
+    <div class="banner-grid">
+        <div id="visual">
+            <div class="slide-visual">
+                <!-- Slide Image Area (1000 x 424) -->
+                <ul class="slide-group">
+                    <li><img class="img-responsive" src="/assets/images/ba1.jpg" alt="Dummy Image" /></li>
+                    <li><img class="img-responsive" src="/assets/images/ba2.jpg" alt="Dummy Image" /></li>
+                    <li><img class="img-responsive" src="/assets/images/ba3.jpg" alt="Dummy Image" /></li>
+                </ul>
+
+                <!-- Slide Description Image Area (316 x 328) -->
+                <div class="script-wrap">
+                    <ul class="script-group">
+                        <li><div class="inner-script"><img class="img-responsive" src="/assets/images/baa1.jpg" alt="Dummy Image" /></div></li>
+                        <li><div class="inner-script"><img class="img-responsive" src="/assets/images/baa2.jpg" alt="Dummy Image" /></div></li>
+                        <li><div class="inner-script"><img class="img-responsive" src="/assets/images/baa3.jpg" alt="Dummy Image" /></div></li>
+                    </ul>
+                    <div class="slide-controller">
+                        <a href="#" class="btn-prev"><img src="/assets/images/btn_prev.png" alt="Prev Slide" /></a>
+                        <a href="#" class="btn-play"><img src="/assets/images/btn_play.png" alt="Start Slide" /></a>
+                        <a href="#" class="btn-pause"><img src="/assets/images/btn_pause.png" alt="Pause Slide" /></a>
+                        <a href="#" class="btn-next"><img src="/assets/images/btn_next.png" alt="Next Slide" /></a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <script type="text/javascript" src="/assets/js/pignose.layerslider.js"></script>
+        <script type="text/javascript">
+    //<![CDATA[
+	    $(window).load(function() {
+		    $('#visual').pignoseLayerSlider({
+			    play    : '.btn-play',
+			    pause   : '.btn-pause',
+			    next    : '.btn-next',
+			    prev    : '.btn-prev'
+		    });
+	    });
+    //]]>
+        </script>
+
+    </div>
+}
+@section js{
+    <script src="~/assets/jquery-validation-1.16.0/jquery.validate.min.js"></script>
+    <script src="~/assets/jquery-validation-1.16.0/additional-methods.min.js"></script>
+    <script type="text/javascript">
+        $('#frmDangKy').validate({
+            rules: {
+                UserName: {
+                    required: true
+                },
+                Pass: {
+                    required: true,
+                    
+                }
+                
+            },
+            messages: {
+                UserName: {
+                        required: 'Không được bỏ trống'
+                },
+                Pass: {
+                    required: 'Không được bỏ trống',
+                }
+            }
+        });
+    </script>
+}
+<br>
+@if (ViewBag.ErrorMsg != null)
+{
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Lỗi!</strong> @ViewBag.ErrorMsg
+    </div>
+}
+<form class="form-horizontal" method="post" action="" id="frmDangKy">
+    <div class="form-group">
+        <label for="txtUserName" class="col-sm-2 control-label">Tên đăng nhập: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Tên đăng nhập" name="UserName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="txtPass" class="col-sm-2 control-label">Mật khẩu: </label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Mật khẩu" name="Pass">
+        </div>
+    </div>
+
+    <br>
+
+    
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-check"></i>
+                Đăng nhập
+            </button>
+        </div>
+    </div>
+    </div>
+</form>
