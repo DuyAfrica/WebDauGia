@@ -45,6 +45,7 @@
           <Property Name="ThoiGianKetThuc" Type="datetime" />
           <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
           <Property Name="ID_DanhMuc" Type="int" />
+          <Property Name="GiaHienTai" Type="money" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -120,6 +121,7 @@
           <Property Name="ThoiGianKetThuc" Type="DateTime" Precision="3" />
           <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID_DanhMuc" Type="Int32" />
+          <Property Name="GiaHienTai" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -198,6 +200,7 @@
                 <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="ID_DanhMuc" ColumnName="ID_DanhMuc" />
+                <ScalarProperty Name="GiaHienTai" ColumnName="GiaHienTai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

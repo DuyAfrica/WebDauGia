@@ -25,5 +25,6 @@ namespace WebApplication1.Models
         public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
         public string HinhAnh { get; set; }
         public Nullable<int> ID_DanhMuc { get; set; }
+        public Nullable<decimal> GiaHienTai { get; set; }
     }
 }

@@ -43,6 +43,7 @@
           <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="ID_DanhMuc" ColumnName="ID_DanhMuc" />
+          <ScalarProperty Name="GiaHienTai" ColumnName="GiaHienTai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

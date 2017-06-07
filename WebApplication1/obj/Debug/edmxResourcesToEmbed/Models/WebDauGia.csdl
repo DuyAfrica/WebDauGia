@@ -40,6 +40,7 @@
     <Property Name="ThoiGianKetThuc" Type="DateTime" Precision="3" />
     <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ID_DanhMuc" Type="Int32" />
+    <Property Name="GiaHienTai" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>

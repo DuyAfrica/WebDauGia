@@ -40,6 +40,7 @@
     <Property Name="ThoiGianKetThuc" Type="datetime" />
     <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
     <Property Name="ID_DanhMuc" Type="int" />
+    <Property Name="GiaHienTai" Type="money" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
