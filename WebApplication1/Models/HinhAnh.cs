@@ -12,10 +12,10 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Image
+    public partial class HinhAnh
     {
-        public int ImgID { get; set; }
-        public Nullable<int> ProID { get; set; }
-        public string ImgName { get; set; }
+        public int ID_HinhAnh { get; set; }
+        public Nullable<int> ID_SanPham { get; set; }
+        public string Ten { get; set; }
     }
 }

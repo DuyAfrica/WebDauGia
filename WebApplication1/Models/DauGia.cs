@@ -12,13 +12,11 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Member
+    public partial class DauGia
     {
-        public int MemID { get; set; }
-        public string MemName { get; set; }
-        public string UserName { get; set; }
-        public string Pass { get; set; }
+        public int ID_DauGia { get; set; }
+        public Nullable<int> ID_SanPham { get; set; }
         public string Email { get; set; }
-        public string DiaChi { get; set; }
+        public Nullable<decimal> Gia { get; set; }
     }
 }

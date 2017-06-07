@@ -1,16 +1,9 @@
-﻿<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-@using WebApplication1.Models;
+﻿@using WebApplication1.Models;
 @using WebApplication1.Helpers;
 @{
     var ctx = new WebDauGiaEntities();
-    var list = ctx.Categories.ToList();
+    var list = ctx.DanhMucs.ToList();
 }
-@model List<WebApplication1.Models.Category>
  
 <!DOCTYPE html>
 <html>
@@ -77,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <option value="null">Tất cả danh mục</option>
                             @foreach (var c in list)
                             {
-                                <option value="null">@c.CatName</option>
+                                <option value="null">@c.Ten</option>
                                 
                             }
                            
@@ -142,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <ul class="multi-column-dropdown">
                                                     @foreach (var c in list)
                                                     {
-                                                        <li><a href="mens.html">@c.CatName</a></li>
+                                                        <li><a href="mens.html">@c.Ten</a></li>
                                                     }
                                                     
                                                    

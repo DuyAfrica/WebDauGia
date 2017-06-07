@@ -1,53 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WebDauGiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Category">
+  <EntityType Name="DanhMuc">
     <Key>
-      <PropertyRef Name="CatID" />
+      <PropertyRef Name="ID_DanhMuc" />
     </Key>
-    <Property Name="CatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CatName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="TinyCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_DanhMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Image">
+  <EntityType Name="DauGia">
     <Key>
-      <PropertyRef Name="ImgID" />
+      <PropertyRef Name="ID_DauGia" />
     </Key>
-    <Property Name="ImgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProID" Type="Int32" />
-    <Property Name="ImgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ID_DauGia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SanPham" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
-  <EntityType Name="Member">
+  <EntityType Name="HinhAnh">
     <Key>
-      <PropertyRef Name="MemID" />
+      <PropertyRef Name="ID_HinhAnh" />
     </Key>
-    <Property Name="MemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_HinhAnh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SanPham" Type="Int32" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="ID_SanPham" />
+    </Key>
+    <Property Name="ID_SanPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GiaKhoiDiem" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BuocGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GiaMuaNgay" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TenNguoiBan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiGianDang" Type="DateTime" Precision="3" />
+    <Property Name="ThoiGianKetThuc" Type="DateTime" Precision="3" />
+    <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_DanhMuc" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ThanhVien">
+    <Key>
+      <PropertyRef Name="ID_ThanhVien" />
+    </Key>
+    <Property Name="ID_ThanhVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Product">
-    <Key>
-      <PropertyRef Name="ProID" />
-    </Key>
-    <Property Name="ProID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="TinyDes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PriceCurrent" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="PriceNow" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TimeRemain" Type="DateTime" Precision="3" />
-    <Property Name="Quantity" Type="Int32" />
-    <Property Name="NameSale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="TimePost" Type="DateTime" Precision="3" />
-    <Property Name="TimeUp" Type="DateTime" Precision="3" />
-    <Property Name="CatID" Type="Int32" />
-    <Property Name="ImgID" Type="Int32" />
-  </EntityType>
   <EntityContainer Name="WebDauGiaEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Categories" EntityType="Self.Category" />
-    <EntitySet Name="Images" EntityType="Self.Image" />
-    <EntitySet Name="Members" EntityType="Self.Member" />
-    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
+    <EntitySet Name="DauGias" EntityType="Self.DauGia" />
+    <EntitySet Name="HinhAnhs" EntityType="Self.HinhAnh" />
+    <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="ThanhViens" EntityType="Self.ThanhVien" />
   </EntityContainer>
 </Schema>

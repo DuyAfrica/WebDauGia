@@ -206,7 +206,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -216,18 +215,24 @@
     <Compile Include="Helpers\CurrentContext.cs" />
     <Compile Include="Helpers\StringUtils.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Category.cs">
+    <Compile Include="Models\DanhMuc.cs">
+      <DependentUpon>WebDauGia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DauGia.cs">
+      <DependentUpon>WebDauGia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HinhAnh.cs">
       <DependentUpon>WebDauGia.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Image.cs">
-      <DependentUpon>WebDauGia.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Member.cs">
+    <Compile Include="Models\SanPham.cs">
       <DependentUpon>WebDauGia.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product.cs">
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>WebDauGia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThanhVien.cs">
       <DependentUpon>WebDauGia.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebDauGia.Context.cs">
@@ -255,7 +260,9 @@
     <Content Include="assets\css\pignose.layerslider.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\07-111409cwDVmwRX63gL.jpg" />
     <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\16-181824SUCmtc7LVoT3.jpg" />
     <Content Include="assets\images\2.png" />
     <Content Include="assets\images\a1.png" />
     <Content Include="assets\images\a2.png" />
@@ -367,6 +374,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <EntityDeploy Include="Models\WebDauGia.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WebDauGia.Designer.cs</LastGenOutput>
@@ -374,10 +385,6 @@
     <Content Include="Models\WebDauGia.edmx.diagram">
       <DependentUpon>WebDauGia.edmx</DependentUpon>
     </Content>
-    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

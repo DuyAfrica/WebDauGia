@@ -12,10 +12,10 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class DanhMuc
     {
-        public int CatID { get; set; }
-        public string CatName { get; set; }
-        public string TinyCat { get; set; }
+        public int ID_DanhMuc { get; set; }
+        public string Ten { get; set; }
+        public string MoTa { get; set; }
     }
 }

@@ -1,53 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WebDauGiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Category">
+  <EntityType Name="DanhMuc">
     <Key>
-      <PropertyRef Name="CatID" />
+      <PropertyRef Name="ID_DanhMuc" />
     </Key>
-    <Property Name="CatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CatName" Type="nvarchar" MaxLength="50" />
-    <Property Name="TinyCat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_DanhMuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Images">
+  <EntityType Name="DauGia">
     <Key>
-      <PropertyRef Name="ImgID" />
+      <PropertyRef Name="ID_DauGia" />
     </Key>
-    <Property Name="ImgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProID" Type="int" />
-    <Property Name="ImgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID_DauGia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SanPham" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia" Type="money" />
   </EntityType>
-  <EntityType Name="Member">
+  <EntityType Name="HinhAnh">
     <Key>
-      <PropertyRef Name="MemID" />
+      <PropertyRef Name="ID_HinhAnh" />
     </Key>
-    <Property Name="MemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MemName" Type="nvarchar" MaxLength="50" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Pass" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_HinhAnh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SanPham" Type="int" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="ID_SanPham" />
+    </Key>
+    <Property Name="ID_SanPham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="GiaKhoiDiem" Type="money" />
+    <Property Name="BuocGia" Type="money" />
+    <Property Name="GiaMuaNgay" Type="money" />
+    <Property Name="TenNguoiBan" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThoiGianDang" Type="datetime" />
+    <Property Name="ThoiGianKetThuc" Type="datetime" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_DanhMuc" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="ThanhVien">
+    <Key>
+      <PropertyRef Name="ID_ThanhVien" />
+    </Key>
+    <Property Name="ID_ThanhVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Products">
-    <Key>
-      <PropertyRef Name="ProID" />
-    </Key>
-    <Property Name="ProID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProName" Type="nvarchar" MaxLength="50" />
-    <Property Name="TinyDes" Type="nvarchar" MaxLength="50" />
-    <Property Name="PriceCurrent" Type="money" />
-    <Property Name="PriceNow" Type="money" />
-    <Property Name="TimeRemain" Type="datetime" />
-    <Property Name="Quantity" Type="int" />
-    <Property Name="NameSale" Type="nvarchar" MaxLength="50" />
-    <Property Name="TimePost" Type="datetime" />
-    <Property Name="TimeUp" Type="datetime" />
-    <Property Name="CatID" Type="int" />
-    <Property Name="ImgID" Type="int" />
-  </EntityType>
   <EntityContainer Name="WebDauGiaModelStoreContainer">
-    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DauGia" EntityType="Self.DauGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HinhAnh" EntityType="Self.HinhAnh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThanhVien" EntityType="Self.ThanhVien" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

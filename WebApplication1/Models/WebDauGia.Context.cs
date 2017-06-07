@@ -25,9 +25,11 @@ namespace WebApplication1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
-        public virtual DbSet<Member> Members { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<DanhMuc> DanhMucs { get; set; }
+        public virtual DbSet<DauGia> DauGias { get; set; }
+        public virtual DbSet<HinhAnh> HinhAnhs { get; set; }
+        public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<ThanhVien> ThanhViens { get; set; }
     }
 }

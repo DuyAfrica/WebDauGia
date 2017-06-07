@@ -1,51 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="WebDauGiaModelStoreContainer" CdmEntityContainer="WebDauGiaEntities">
-    <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="WebDauGiaModel.Category">
-        <MappingFragment StoreEntitySet="Category">
-          <ScalarProperty Name="CatID" ColumnName="CatID" />
-          <ScalarProperty Name="CatName" ColumnName="CatName" />
-          <ScalarProperty Name="TinyCat" ColumnName="TinyCat" />
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="WebDauGiaModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="ID_DanhMuc" ColumnName="ID_DanhMuc" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Images">
-      <EntityTypeMapping TypeName="WebDauGiaModel.Image">
-        <MappingFragment StoreEntitySet="Images">
-          <ScalarProperty Name="ImgID" ColumnName="ImgID" />
-          <ScalarProperty Name="ProID" ColumnName="ProID" />
-          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+    <EntitySetMapping Name="DauGias">
+      <EntityTypeMapping TypeName="WebDauGiaModel.DauGia">
+        <MappingFragment StoreEntitySet="DauGia">
+          <ScalarProperty Name="ID_DauGia" ColumnName="ID_DauGia" />
+          <ScalarProperty Name="ID_SanPham" ColumnName="ID_SanPham" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Members">
-      <EntityTypeMapping TypeName="WebDauGiaModel.Member">
-        <MappingFragment StoreEntitySet="Member">
-          <ScalarProperty Name="MemID" ColumnName="MemID" />
-          <ScalarProperty Name="MemName" ColumnName="MemName" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Pass" ColumnName="Pass" />
+    <EntitySetMapping Name="HinhAnhs">
+      <EntityTypeMapping TypeName="WebDauGiaModel.HinhAnh">
+        <MappingFragment StoreEntitySet="HinhAnh">
+          <ScalarProperty Name="ID_HinhAnh" ColumnName="ID_HinhAnh" />
+          <ScalarProperty Name="ID_SanPham" ColumnName="ID_SanPham" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="WebDauGiaModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="ID_SanPham" ColumnName="ID_SanPham" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="GiaKhoiDiem" ColumnName="GiaKhoiDiem" />
+          <ScalarProperty Name="BuocGia" ColumnName="BuocGia" />
+          <ScalarProperty Name="GiaMuaNgay" ColumnName="GiaMuaNgay" />
+          <ScalarProperty Name="TenNguoiBan" ColumnName="TenNguoiBan" />
+          <ScalarProperty Name="ThoiGianDang" ColumnName="ThoiGianDang" />
+          <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="ID_DanhMuc" ColumnName="ID_DanhMuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WebDauGiaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThanhViens">
+      <EntityTypeMapping TypeName="WebDauGiaModel.ThanhVien">
+        <MappingFragment StoreEntitySet="ThanhVien">
+          <ScalarProperty Name="ID_ThanhVien" ColumnName="ID_ThanhVien" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="WebDauGiaModel.Product">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="ProID" ColumnName="ProID" />
-          <ScalarProperty Name="ProName" ColumnName="ProName" />
-          <ScalarProperty Name="TinyDes" ColumnName="TinyDes" />
-          <ScalarProperty Name="PriceCurrent" ColumnName="PriceCurrent" />
-          <ScalarProperty Name="PriceNow" ColumnName="PriceNow" />
-          <ScalarProperty Name="TimeRemain" ColumnName="TimeRemain" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="NameSale" ColumnName="NameSale" />
-          <ScalarProperty Name="TimePost" ColumnName="TimePost" />
-          <ScalarProperty Name="TimeUp" ColumnName="TimeUp" />
-          <ScalarProperty Name="CatID" ColumnName="CatID" />
-          <ScalarProperty Name="ImgID" ColumnName="ImgID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         }
         [HttpPost]
         [CaptchaValidation("CaptchaCode", "ExampleCaptcha", "Incorrect CAPTCHA code!")]
-        public ActionResult DangKy(Member model)
+        public ActionResult DangKy(ThanhVien model)
         {
             
             if (!ModelState.IsValid)
@@ -30,19 +30,19 @@ namespace WebApplication1.Controllers
             else
             {
                 // TODO: Captcha validation passed, proceed with protected action
-                Member m = new Member
+                ThanhVien m = new ThanhVien
                 {
-                    
-                    UserName = model.UserName,
-                    Pass = StringUtils.Md5(model.Pass),
+
+                    TenDangNhap = model.TenDangNhap,
+                    MatKhau = StringUtils.Md5(model.MatKhau),
                     Email = model.Email,
-                    MemName = model.MemName,
+                    HoTen = model.HoTen,
                     DiaChi = model.DiaChi
 
                 };
                 using (WebDauGiaEntities ctx = new WebDauGiaEntities())
                 {
-                    ctx.Members.Add(m);
+                    ctx.ThanhViens.Add(m);
                     ctx.SaveChanges();
                 }
                 return RedirectToAction("DangNhap", "User");
@@ -55,13 +55,13 @@ namespace WebApplication1.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DangNhap(Member model)
+        public ActionResult DangNhap(ThanhVien model)
         {
-            string pass = StringUtils.Md5(model.Pass);
+            string pass = StringUtils.Md5(model.MatKhau);
             using (var ctx = new WebDauGiaEntities())
             {
-                var member = ctx.Members
-                    .Where(u => u.UserName == model.UserName && u.Pass == pass)
+                var member = ctx.ThanhViens
+                    .Where(u => u.TenDangNhap == model.TenDangNhap && u.MatKhau == pass)
                     .FirstOrDefault();
                 if(member !=null)
                 {
